@@ -6,6 +6,7 @@
 
 android_app {
     name: "KProfiles",
+    init_rc: ["init/init.kprofiles.rc"],
     defaults: [
         "SettingsLibDefaults",
     ],
