@@ -21,3 +21,6 @@ PRODUCT_SOONG_NAMESPACES += \
 
 PRODUCT_PACKAGES += \
     KProfiles
+
+PRODUCT_COPY_FILES += \
+	packages/apps/KProfiles/init/init.kprofiles.rc:$(TARGET_OUT_VENDOR_ETC)/init/hw/init.kprofiles.rc
