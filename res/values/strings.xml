@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 CannedShroud
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <string name="kprofiles_app_name">kprofiles</string>
+    <string name="kprofiles_title">KProfiles</string>
+    <string name="kprofiles_summary">Performance level</string>
+    <string name="kprofiles_auto_title">Auto Profile</string>
+    <string name="kprofiles_auto_summary">Automatically switch to battery mode when device screen turns off and back to default profile when screen turns on.</string>
+    <string name="kprofiles_modes_title">Modes</string>
+    <string name="kprofiles_modes_summary">select default mode</string>
+    <string name="kprofiles_modes_battery">Battery</string>
+    <string name="kprofiles_modes_balanced">Balanced</string>
+    <string name="kprofiles_modes_performance">Performance</string>
+    <string name="kprofiles_not_supported">KProfiles is not currently supported by the kernel</string>
+
+</resources>
