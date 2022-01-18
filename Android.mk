@@ -24,3 +24,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
 	packages/apps/KProfiles/init/init.kprofiles.rc:$(TARGET_OUT_VENDOR_ETC)/init/hw/init.kprofiles.rc
+
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+     packages/apps/KProfiles/sepolicy/private
