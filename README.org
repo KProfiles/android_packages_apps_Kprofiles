@@ -1,0 +1,43 @@
+#+TITLE: Kprofiles Frontend
+
+* Table of contents
+:PROPERTIES:
+:TOC:
+:END:
+:CONTENTS:
+- [[#about][About]]
+- [[#usage][Usage]]
+- [[#purpose][Purpose]]
+- [[#credits][Credits]]
+:END:
+
+* About
+
+Frontend manager for Kprofiles backend that lets you access the parameters exposed by the kernel module
+
+You can learn more about the kernel module [[https://github.com/dakkshesh07/Kprofiles][here]].
+
+* Usage
+
+** 1) Clone this repository to the specified directory
+
+#+BEGIN_SRC shell
+git clone https://github.com/CannedShroud/android_packages_apps_KProfiles packages/apps/KProfiles 
+#+END_SRC
+
+** 2) You will have to configure the sepolicy manually, the necessary labels are placed in the right file under 
+#+BEGIN_SRC shell 
+sepolicy/private 
+#+END_SRC
+
+* Purpose of the module 
+
++ To achieve balancing in terms of battery backup and performance.
+
++ To not apply boosts when the screen is off with display notifiers.
+
+#+END_SRC
+* Credits
+
++ [[https://t.me/CannedShroud][CannedShroud]] for developing krofiles Frontend
++ Some others who helped alongside to develop kprofiles
