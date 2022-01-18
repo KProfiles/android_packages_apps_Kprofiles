@@ -26,7 +26,7 @@ import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 
 import com.cannedshroud.settings.R;
-import org.lineageos.settings.utils.FileUtils;
+import com.cannedshroud.settings.utils.FileUtils;
 
 public class KprofilesSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {
