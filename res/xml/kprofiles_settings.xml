@@ -23,7 +23,7 @@
         android:summary="@string/kprofiles_auto_summary" />
 
      <ListPreference
-          android:defaultValue="2"
+          android:defaultValue="0"
           android:entries="@array/kprofile_modes_entries"
           android:entryValues="@array/kprofile_modes_values"
           android:key="kprofiles_modes"
