@@ -1,6 +1,21 @@
+service kprofiles_sepolicy_patcher /system/bin/sepolicy-inject -s system_app -t sysfs -c file -p read,write,open,getattr -P /vendor/etc/selinux/precompiled_sepolicy -l
+    class main
+    user root
+    group root system
+    oneshot
+    disabled
+    seclabel u:r:init:s0
+
 on boot
     chown system system /sys/module/kprofiles/parameters/auto_kprofiles
     chmod 0660 /sys/module/kprofiles/parameters/auto_kprofiles
     chown system system /sys/module/kprofiles/parameters/mode
     chmod 0660 /sys/module/kprofiles/parameters/mode
 
+    chmod +x /system/bin/sepolicy-inject
+
+# start the service when the boot is completed
+on property:sys.boot_completed=1
+    mount -o remount,rw /
+    mount -o remount,rw /vendor/
+    start kprofiles_sepolicy_patcher
