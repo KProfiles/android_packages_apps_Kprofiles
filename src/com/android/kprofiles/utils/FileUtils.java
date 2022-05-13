@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cannedshroud.settings.utils;
+package com.android.kprofiles.utils;
 
 import android.util.Log;
 import java.io.BufferedReader;

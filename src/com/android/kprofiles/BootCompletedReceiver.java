@@ -15,13 +15,13 @@
  * limitations under the License.
  */
 
-package com.cannedshroud.settings;
+package com.android.kprofiles;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-import com.cannedshroud.settings.utils.FileUtils;
+import com.android.kprofiles.utils.FileUtils;
 import android.content.SharedPreferences;
 import androidx.preference.PreferenceManager;
 

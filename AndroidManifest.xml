@@ -13,7 +13,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cannedshroud.settings"
+    package="com.android.kprofiles"
     android:versionCode="1"
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">

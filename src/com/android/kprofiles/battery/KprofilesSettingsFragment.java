@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cannedshroud.settings.battery;
+package com.android.kprofiles.battery;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -25,8 +25,8 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 
-import com.cannedshroud.settings.R;
-import com.cannedshroud.settings.utils.FileUtils;
+import com.android.kprofiles.R;
+import com.android.kprofiles.utils.FileUtils;
 
 public class KprofilesSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {

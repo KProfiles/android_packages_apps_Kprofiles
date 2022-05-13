@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cannedshroud.settings.battery;
+package com.android.kprofiles.battery;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
