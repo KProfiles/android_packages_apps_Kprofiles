@@ -15,11 +15,11 @@
 
     <string name="kprofiles_app_name">kprofiles</string>
     <string name="kprofiles_title">KProfiles</string>
-    <string name="kprofiles_summary">Performance level</string>
-    <string name="kprofiles_auto_title">Auto Profile</string>
+    <string name="kprofiles_summary">A Kernelspace profiles mode manager</string>
+    <string name="kprofiles_auto_title">Auto KProfiles</string>
     <string name="kprofiles_auto_summary">Automatically switch to battery mode when device screen turns off and back to default profile when screen turns on.</string>
     <string name="kprofiles_modes_title">Modes</string>
-    <string name="kprofiles_modes_summary">select default mode</string>
+    <string name="kprofiles_modes_summary">Select default mode.</string>
     <string name="kprofiles_modes_battery">Battery</string>
     <string name="kprofiles_modes_balanced">Balanced</string>
     <string name="kprofiles_modes_performance">Performance</string>
