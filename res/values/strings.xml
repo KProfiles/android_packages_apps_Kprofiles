@@ -13,7 +13,6 @@
 -->
 <resources>
 
-    <string name="kprofiles_app_name">kprofiles</string>
     <string name="kprofiles_title">KProfiles</string>
     <string name="kprofiles_summary">A Kernelspace profiles mode manager</string>
     <string name="kprofiles_auto_title">Auto KProfiles</string>
