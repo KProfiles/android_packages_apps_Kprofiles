@@ -18,7 +18,7 @@
     <string name="kprofiles_auto_title">Use Auto KProfiles</string>
     <string name="kprofiles_auto_summary">Automatically switch to battery mode when device screen turns off and back to default profile when screen turns on</string>
     <string name="kprofiles_modes_title">KProfiles Modes</string>
-    <string name="kprofiles_modes_summary">Select default mode</string>
+    <string name="kprofiles_modes_none">None</string>
     <string name="kprofiles_modes_battery">Battery</string>
     <string name="kprofiles_modes_balanced">Balanced</string>
     <string name="kprofiles_modes_performance">Performance</string>

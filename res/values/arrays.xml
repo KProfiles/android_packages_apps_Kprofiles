@@ -14,14 +14,14 @@
 -->
 <resources>
 
-    <string-array name="kprofile_modes_entries">
-        <item>@string/action_none</item>
+    <string-array name="kprofiles_modes_entries">
+        <item>@string/kprofiles_modes_none</item>
         <item>@string/kprofiles_modes_battery</item>
         <item>@string/kprofiles_modes_balanced</item>
         <item>@string/kprofiles_modes_performance</item>
     </string-array>
 
-    <string-array name="kprofile_modes_values">
+    <string-array name="kprofiles_modes_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>

@@ -17,16 +17,18 @@
 package com.android.kprofiles.battery;
 
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 
-public class KprofilesSettingsActivity extends PreferenceActivity {
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.collapsingtoolbar.R;
+
+public class KprofilesSettingsActivity extends CollapsingToolbarBaseActivity {
 
     private static final String TAG_KPROFILES = "kprofiles";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(android.R.id.content,
+        getFragmentManager().beginTransaction().replace(R.id.content_frame,
                 new KprofilesSettingsFragment(), TAG_KPROFILES).commit();
     }
 }

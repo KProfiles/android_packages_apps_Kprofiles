@@ -16,14 +16,19 @@
 
 package com.android.kprofiles.battery;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
-import androidx.preference.ListPreference;
 
 import com.android.kprofiles.R;
 import com.android.kprofiles.utils.FileUtils;
@@ -37,11 +42,13 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
     private static final String KPROFILES_AUTO_NODE = "/sys/module/kprofiles/parameters/auto_kprofiles";
     private static final String KPROFILES_MODES_KEY = "kprofiles_modes";
     private static final String KPROFILES_MODES_NODE = "/sys/module/kprofiles/parameters/mode";
-    private static final String KPROFILES_MODES_DEFAULT = "2";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.kprofiles_settings);
+        final ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         kProfilesAutoPreference = (SwitchPreference) findPreference(KPROFILES_AUTO_KEY);
         if (FileUtils.fileExists(KPROFILES_AUTO_NODE)) {
             kProfilesAutoPreference.setEnabled(true);
@@ -60,7 +67,21 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
         }
         
     }
-    
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        final View view = LayoutInflater.from(getContext()).inflate(R.layout.kprofiles,
+                container, false);
+        ((ViewGroup) view).addView(super.onCreateView(inflater, container, savedInstanceState));
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (KPROFILES_AUTO_KEY.equals(preference.getKey())) {
