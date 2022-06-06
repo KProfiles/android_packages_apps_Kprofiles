@@ -40,10 +40,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        boolean kProfileaAutoEnabled = sharedPrefs.getBoolean(KPROFILES_AUTO_KEY, false);
-        FileUtils.writeLine(KPROFILES_AUTO_NODE, kProfileaAutoEnabled ? "1" : "0");
-        int kProfileMode = sharedPrefs.getInt(KPROFILES_MODES_KEY, 0);
-        FileUtils.writeLine(KPROFILES_MODES_NODE, kProfileMode > 0 ? "1" : "0");
+        boolean kProfilesAutoEnabled = sharedPrefs.getBoolean(KPROFILES_AUTO_KEY, false);
+        FileUtils.writeLine(KPROFILES_AUTO_NODE, kProfilesAutoEnabled ? "Y" : "N");
+        String kProfileMode = sharedPrefs.getString(KPROFILES_AUTO_KEY, "0");
+        FileUtils.writeLine(KPROFILES_MODES_NODE, kProfileMode);
 
     }
 }

@@ -65,7 +65,7 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (KPROFILES_AUTO_KEY.equals(preference.getKey())) {
             try {
-                FileUtils.writeLine(KPROFILES_AUTO_NODE, (Boolean) newValue ? "1" : "0");
+                FileUtils.writeLine(KPROFILES_AUTO_NODE, (Boolean) newValue ? "Y" : "N");
             } catch(Exception e) { }
 
         } else if (KPROFILES_MODES_KEY.equals(preference.getKey())) {
