@@ -30,5 +30,5 @@ on boot
     # Allow system to manipulate kprofiles modes and parameters
     chown system system /sys/module/kprofiles/parameters/auto_kprofiles
     chmod 0660 /sys/module/kprofiles/parameters/auto_kprofiles
-    chown system system /sys/module/kprofiles/parameters/mode
-    chmod 0660 /sys/module/kprofiles/parameters/mode
+    chown system system /sys/module/kprofiles/parameters/kp_mode
+    chmod 0660 /sys/module/kprofiles/parameters/kp_mode

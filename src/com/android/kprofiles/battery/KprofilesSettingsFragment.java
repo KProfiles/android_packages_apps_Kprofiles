@@ -41,7 +41,7 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
     private static final String KPROFILES_AUTO_KEY = "kprofiles_auto";
     private static final String KPROFILES_AUTO_NODE = "/sys/module/kprofiles/parameters/auto_kprofiles";
     private static final String KPROFILES_MODES_KEY = "kprofiles_modes";
-    private static final String KPROFILES_MODES_NODE = "/sys/module/kprofiles/parameters/mode";
+    private static final String KPROFILES_MODES_NODE = "/sys/module/kprofiles/parameters/kp_mode";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
