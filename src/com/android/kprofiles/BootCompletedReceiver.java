@@ -42,7 +42,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         boolean kProfilesAutoEnabled = sharedPrefs.getBoolean(KPROFILES_AUTO_KEY, false);
         FileUtils.writeLine(KPROFILES_AUTO_NODE, kProfilesAutoEnabled ? "Y" : "N");
-        String kProfileMode = sharedPrefs.getString(KPROFILES_AUTO_KEY, "0");
+        String kProfileMode = sharedPrefs.getString(KPROFILES_MODES_KEY, "0");
         FileUtils.writeLine(KPROFILES_MODES_NODE, kProfileMode);
 
     }
