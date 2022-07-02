@@ -17,8 +17,6 @@
 */
 -->
 <resources>
-
      <!-- KProfiles Levels -->
-     <integer name="kprofiles_modes_default">2</integer>
-
+     <integer name="kprofiles_modes_default">0</integer>
 </resources>
