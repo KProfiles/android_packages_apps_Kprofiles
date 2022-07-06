@@ -30,4 +30,9 @@
           android:title="@string/kprofiles_modes_title" 
           android:summary="%s" />
 
+     <com.android.settingslib.widget.FooterPreference
+          android:key="pref_kprofiles_modes_info"
+          android:title="%s"
+          android:selectable="false" />
+
 </PreferenceScreen>
