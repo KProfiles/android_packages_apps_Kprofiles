@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 CannedShroud
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="kprofiles_title">KProfiles</string>
+    <string name="kprofiles_summary">Managing Kernelspace profiles to achieve balancing in terms of battery backup and performance</string>
+    <string name="kprofiles_auto_title">தானியங்கி kprofiles பயன்படுத்தவும்</string>
+    <string name="kprofiles_auto_summary">சாதனத்தின் திரை அணைக்கப்படும் போது தானாகவே குறைக்கப்பட்ட மின் நுகர்வு பயன்முறைக்கு மாறவும் மற்றும் திரை இயக்கப்படும் போது இயல்புநிலை பயன்முறைக்கு திரும்பவும்</string>
+    <string name="kprofiles_modes_title">KProfiles மாற்றம்</string>
+    <string name="kprofiles_modes_none">எதுவும் இல்லை</string>
+    <string name="kprofiles_modes_battery">குறைந்த சக்தி</string>
+    <string name="kprofiles_modes_balanced">சமநிலையான</string>
+    <string name="kprofiles_modes_performance">உயர் செயல்திறன்</string>
+    <string name="kprofiles_not_supported">KProfiles கர்னலால் ஆதரிக்கப்படவில்லை</string>
+    <string name="kprofiles_modes_description"><xliff:g id="description">%s</xliff:g></string>
+    <string name="kprofiles_modes_none_description">பேட்டரி சேமிப்பு மற்றும் உயர் செயல்திறன் ஆகியவற்றின் அடிப்படையில் சமநிலையை அடைய வெவ்வேறு அமைப்புகளைப் பயன்படுத்தி கர்னல் செயல்பாடுகளை ஒழுங்குபடுத்தவும் நிர்வகிக்கவும் பயன்படுகிறது</string>
+    <string name="kprofiles_modes_battery_description">குறைந்த சக்தி:\nSkip all userspace and/or in-kernel boosts, reduces gpu scaling frequency</string>
+    <string name="kprofiles_modes_balanced_description">சமநிலையான:\nபேட்டரி சேமிப்பு மற்றும் உயர் செயல்திறன் முறைகள் இடையே சமநிலை</string>
+    <string name="kprofiles_modes_performance_description">உயர் செயல்திறன்\nMaximize all boosts, increases gpu scaling frequency to its max</string>
+</resources>

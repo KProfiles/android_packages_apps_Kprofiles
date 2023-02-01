@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 CannedShroud
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="kprofiles_title">KProfiles</string>
+    <string name="kprofiles_summary">Gérer les profils Kernelspace pour atteindre l\'équilibre en termes de sauvegarde de la batterie et de performances</string>
+    <string name="kprofiles_auto_title">Utiliser KProfiles Auto</string>
+    <string name="kprofiles_auto_summary">Basculer automatiquement en mode batterie lorsque l\'écran de l\'appareil s\'éteint et revient au profil par défaut lorsque l\'écran s\'allume</string>
+    <string name="kprofiles_modes_title">Modes KProfiles</string>
+    <string name="kprofiles_modes_none">Aucun</string>
+    <string name="kprofiles_modes_battery">Batterie</string>
+    <string name="kprofiles_modes_balanced">Equilibré</string>
+    <string name="kprofiles_modes_performance">Performance</string>
+    <string name="kprofiles_not_supported">KProfiles n\'est actuellement pas pris en charge par le noyau</string>
+    <string name="kprofiles_modes_description"><xliff:g id="description">%s</xliff:g></string>
+    <string name="kprofiles_modes_none_description">Réguler et gérer les activités du noyau d\'une manière orientée vers le profil afin d\'atteindre l\'équilibre en termes de sauvegarde de la batterie et donc de performances</string>
+    <string name="kprofiles_modes_battery_description">Mode Batterie :\nIgnorer tout l\'espace utilisateur et/ou les boosts dans le noyau, réduit la fréquence de mise à l\'échelle du gpu</string>
+    <string name="kprofiles_modes_balanced_description">Mode équilibré:\nConseils pour équilibrer la batterie et les modes de performance</string>
+    <string name="kprofiles_modes_performance_description">Mode performance:\nMaximise tous les boosts, augmente la fréquence de mise à l\'échelle du gpu jusqu\'à son maximum</string>
+</resources>
