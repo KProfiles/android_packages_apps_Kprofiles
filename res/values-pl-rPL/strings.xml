@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 CannedShroud
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="kprofiles_title">Profile jądra</string>
+    <string name="kprofiles_summary">Zarządzanie profilami przestrzeni jądra w celu opracowania balansu pomiędzy wydajnością a oszczędzaniem baterii</string>
+    <string name="kprofiles_auto_title">Automatyczne profile jądra</string>
+    <string name="kprofiles_auto_summary">Automatyczne przełączanie na oszczędzanie baterii po wygaszeniu ekranu i powrót do domyślnego profilu po jego wybudzeniu</string>
+    <string name="kprofiles_modes_title">Tryby profili jądra</string>
+    <string name="kprofiles_modes_none">Brak</string>
+    <string name="kprofiles_modes_battery">Oszczędzanie baterii</string>
+    <string name="kprofiles_modes_balanced">Optymalny</string>
+    <string name="kprofiles_modes_performance">Wydajność</string>
+    <string name="kprofiles_not_supported">Profile jądra nie są aktualnie wspierane przez jądro</string>
+    <string name="kprofiles_modes_description"><xliff:g id="description">%s</xliff:g></string>
+    <string name="kprofiles_modes_none_description">Reguluje i zarządza zadaniami w jądrze według wybranego profilu w celu optymalizacji pomiędzy oszczędzaniem baterii a wydajnością</string>
+    <string name="kprofiles_modes_battery_description">Oszczędzanie baterii:\nPomija przestrzeń użytkową i/lub wspomaganie jądra, zmniejsza częstotliwość skalowania GPU</string>
+    <string name="kprofiles_modes_balanced_description">Optymalny:\nZachowanie równowagi pomiędzy wydajnością a oszczędzaniem baterii</string>
+    <string name="kprofiles_modes_performance_description">Wydajność:\nZwiększenie wspomagania jądra, częstotliwości skalowania GPU do maksimum</string>
+</resources>

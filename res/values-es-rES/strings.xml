@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 CannedShroud
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="kprofiles_title">KProfiles</string>
+    <string name="kprofiles_summary">Gestión de los perfiles del Kernel para lograr un equilibrio en términos de autonomía de la batería y rendimiento</string>
+    <string name="kprofiles_auto_title">Usar Auto KProfiles</string>
+    <string name="kprofiles_auto_summary">Cambiar automáticamente al modo de batería cuando la pantalla del dispositivo se apaga y vuelve al perfil predeterminado cuando la pantalla se enciende</string>
+    <string name="kprofiles_modes_title">Modos KProfiles</string>
+    <string name="kprofiles_modes_none">Ninguno</string>
+    <string name="kprofiles_modes_battery">Batería</string>
+    <string name="kprofiles_modes_balanced">Equilibrado</string>
+    <string name="kprofiles_modes_performance">Rendimiento</string>
+    <string name="kprofiles_not_supported">KProfiles no está soportado actualmente por el kernel</string>
+    <string name="kprofiles_modes_description"><xliff:g id="description">%s</xliff:g></string>
+    <string name="kprofiles_modes_none_description">Regular y gestionar las actividades del kernel de una forma orientada al perfil para lograr un equilibrio en términos de autonomía de la batería y rendimiento</string>
+    <string name="kprofiles_modes_battery_description">Modo Batería:\nOmite todos los aumentos en el espacio de usuario y/o en el kernel, reduce la frecuencia de escalado de la GPU</string>
+    <string name="kprofiles_modes_balanced_description">Modo Equilibrado:\nEquilibra los modos de batería y rendimiento</string>
+    <string name="kprofiles_modes_performance_description">Modo Rendimiento:\nMaximiza todos los aumentos, también aumenta al máximo la frecuencia de escalado de la GPU</string>
+</resources>
