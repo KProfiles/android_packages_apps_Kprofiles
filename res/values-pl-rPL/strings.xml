@@ -22,7 +22,6 @@
     <string name="kprofiles_modes_balanced">Optymalny</string>
     <string name="kprofiles_modes_performance">Wydajność</string>
     <string name="kprofiles_not_supported">Profile jądra nie są aktualnie wspierane przez jądro</string>
-    <string name="kprofiles_modes_description"><xliff:g id="description">%s</xliff:g></string>
     <string name="kprofiles_modes_none_description">Reguluje i zarządza zadaniami w jądrze według wybranego profilu w celu optymalizacji pomiędzy oszczędzaniem baterii a wydajnością</string>
     <string name="kprofiles_modes_battery_description">Oszczędzanie baterii:\nPomija przestrzeń użytkową i/lub wspomaganie jądra, zmniejsza częstotliwość skalowania GPU</string>
     <string name="kprofiles_modes_balanced_description">Optymalny:\nZachowanie równowagi pomiędzy wydajnością a oszczędzaniem baterii</string>

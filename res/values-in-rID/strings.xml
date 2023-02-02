@@ -22,7 +22,6 @@
     <string name="kprofiles_modes_balanced">Seimbang</string>
     <string name="kprofiles_modes_performance">Performa</string>
     <string name="kprofiles_not_supported">Saat ini kernel tidak mendukung Kprofiles</string>
-    <string name="kprofiles_modes_description"><xliff:g id="deskripsi">%s</xliff:g></string>
     <string name="kprofiles_modes_none_description">Mengatur dan mengelola aktivitas dalam kernel dengan cara berorientasi pada profil untuk mencapai keseimbangan dalam hal keiritan baterai dan performa yang sesuai</string>
     <string name="kprofiles_modes_battery_description">Mode Baterai:\nLewati semua userspace dan/atau di dalam kernel boosts, mengurangi gpu scaling frequency</string>
     <string name="kprofiles_modes_balanced_description">Mode Seimbang:\nKeseimbangan antara keiritan baterai maupun performa</string>

@@ -12,19 +12,18 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="kprofiles_title">KProfiles</string>
-    <string name="kprofiles_summary">Managing Kernelspace profiles to achieve balancing in terms of battery backup and performance</string>
-    <string name="kprofiles_auto_title">Use Auto KProfiles</string>
-    <string name="kprofiles_auto_summary">Automatically switch to battery mode when device screen turns off and back to default profile when screen turns on</string>
-    <string name="kprofiles_modes_title">KProfiles Modes</string>
-    <string name="kprofiles_modes_none">None</string>
-    <string name="kprofiles_modes_battery">Battery</string>
-    <string name="kprofiles_modes_balanced">Balanced</string>
-    <string name="kprofiles_modes_performance">Performance</string>
-    <string name="kprofiles_not_supported">KProfiles is not currently supported by the kernel</string>
-    <string name="kprofiles_modes_description"><xliff:g id="description">%s</xliff:g></string>
-    <string name="kprofiles_modes_none_description">Regulate and manage in-kernel activities in a profile-oriented manner to achieve balance in terms of battery backup and performance accordingly</string>
-    <string name="kprofiles_modes_battery_description">Battery Mode:\nSkip all userspace and/or in-kernel boosts, reduces gpu scaling frequency</string>
-    <string name="kprofiles_modes_balanced_description">Balanced Mode:\nTips the balance between battery and performance modes</string>
-    <string name="kprofiles_modes_performance_description">Performance Mode:\nMaximize all boosts, increases gpu scaling frequency to its max</string>
+    <string name="kprofiles_title">KProfile</string>
+    <string name="kprofiles_summary">Kernelraumprofile verwalten, um ein Gleichgewicht in Bezug auf Batteriesicherung und -leistung zu erzielen</string>
+    <string name="kprofiles_auto_title">Auto-KProfile verwenden</string>
+    <string name="kprofiles_auto_summary">Beim Einschalten des Bildschirms automatisch in den Akku-Modus wechseln, wenn der Bildschirm ausgeschaltet wird und zurück zum Standardprofil</string>
+    <string name="kprofiles_modes_title">KProfile Modi</string>
+    <string name="kprofiles_modes_none">Keine</string>
+    <string name="kprofiles_modes_battery">Batterie</string>
+    <string name="kprofiles_modes_balanced">Ausgeglichen</string>
+    <string name="kprofiles_modes_performance">Leistung</string>
+    <string name="kprofiles_not_supported">KProfiles wird derzeit vom Kernel nicht unterstützt</string>
+    <string name="kprofiles_modes_none_description">Regelt und verwaltet Kernel-Aktivitäten auf profilorientierte Art und Weise, um ein Gleichgewicht in Bezug auf Batteriesicherung und -leistung zu erreichen</string>
+    <string name="kprofiles_modes_battery_description">Akku-Modus:\nÜberspringe alle Benutzerräume und/oder Kernel-Boosts, reduziert gpu Skalierungsfrequenz</string>
+    <string name="kprofiles_modes_balanced_description">Balancierter Modus:\nTippt das Gleichgewicht zwischen Batterie und Leistung</string>
+    <string name="kprofiles_modes_performance_description">Leistungsmodus:\nMaximiert alle Boosts, erhöht die gpu Skalierungsfrequenz auf das Maximum</string>
 </resources>
