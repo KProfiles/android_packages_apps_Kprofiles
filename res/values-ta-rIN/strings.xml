@@ -22,7 +22,6 @@
     <string name="kprofiles_modes_balanced">சமநிலையான</string>
     <string name="kprofiles_modes_performance">உயர் செயல்திறன்</string>
     <string name="kprofiles_not_supported">KProfiles கர்னலால் ஆதரிக்கப்படவில்லை</string>
-    <string name="kprofiles_modes_description"><xliff:g id="description">%s</xliff:g></string>
     <string name="kprofiles_modes_none_description">பேட்டரி சேமிப்பு மற்றும் உயர் செயல்திறன் ஆகியவற்றின் அடிப்படையில் சமநிலையை அடைய வெவ்வேறு அமைப்புகளைப் பயன்படுத்தி கர்னல் செயல்பாடுகளை ஒழுங்குபடுத்தவும் நிர்வகிக்கவும் பயன்படுகிறது</string>
     <string name="kprofiles_modes_battery_description">குறைந்த சக்தி:\nSkip all userspace and/or in-kernel boosts, reduces gpu scaling frequency</string>
     <string name="kprofiles_modes_balanced_description">சமநிலையான:\nபேட்டரி சேமிப்பு மற்றும் உயர் செயல்திறன் முறைகள் இடையே சமநிலை</string>

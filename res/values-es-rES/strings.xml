@@ -22,7 +22,6 @@
     <string name="kprofiles_modes_balanced">Equilibrado</string>
     <string name="kprofiles_modes_performance">Rendimiento</string>
     <string name="kprofiles_not_supported">KProfiles no está soportado actualmente por el kernel</string>
-    <string name="kprofiles_modes_description"><xliff:g id="description">%s</xliff:g></string>
     <string name="kprofiles_modes_none_description">Regular y gestionar las actividades del kernel de una forma orientada al perfil para lograr un equilibrio en términos de autonomía de la batería y rendimiento</string>
     <string name="kprofiles_modes_battery_description">Modo Batería:\nOmite todos los aumentos en el espacio de usuario y/o en el kernel, reduce la frecuencia de escalado de la GPU</string>
     <string name="kprofiles_modes_balanced_description">Modo Equilibrado:\nEquilibra los modos de batería y rendimiento</string>

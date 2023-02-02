@@ -22,7 +22,6 @@
     <string name="kprofiles_modes_balanced">Equilibré</string>
     <string name="kprofiles_modes_performance">Performance</string>
     <string name="kprofiles_not_supported">KProfiles n\'est actuellement pas pris en charge par le noyau</string>
-    <string name="kprofiles_modes_description"><xliff:g id="description">%s</xliff:g></string>
     <string name="kprofiles_modes_none_description">Réguler et gérer les activités du noyau d\'une manière orientée vers le profil afin d\'atteindre l\'équilibre en termes de sauvegarde de la batterie et donc de performances</string>
     <string name="kprofiles_modes_battery_description">Mode Batterie :\nIgnorer tout l\'espace utilisateur et/ou les boosts dans le noyau, réduit la fréquence de mise à l\'échelle du gpu</string>
     <string name="kprofiles_modes_balanced_description">Mode équilibré:\nConseils pour équilibrer la batterie et les modes de performance</string>
