@@ -33,6 +33,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String KPROFILES_MODES_KEY = "kprofiles_modes";
     private static final String KPROFILES_MODES_NODE = "/sys/module/kprofiles/parameters/kp_mode";
 
+    private boolean iskProfilesModesSupported = FileUtils.fileExists(KPROFILES_MODES_NODE);
+
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG)
@@ -40,10 +42,13 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        boolean kProfilesAutoEnabled = sharedPrefs.getBoolean(KPROFILES_AUTO_KEY, false);
-        FileUtils.writeLine(KPROFILES_AUTO_NODE, kProfilesAutoEnabled ? "Y" : "N");
-        String kProfileMode = sharedPrefs.getString(KPROFILES_MODES_KEY, "0");
-        FileUtils.writeLine(KPROFILES_MODES_NODE, kProfileMode);
-
+        if (FileUtils.fileExists(KPROFILES_AUTO_NODE) == true) {
+            boolean kProfilesAutoEnabled = sharedPrefs.getBoolean(KPROFILES_AUTO_KEY, false);
+            FileUtils.writeLine(KPROFILES_AUTO_NODE, kProfilesAutoEnabled ? "Y" : "N");
+        }
+        if (iskProfilesModesSupported == true) {
+            String kProfileMode = sharedPrefs.getString(KPROFILES_MODES_KEY, "0");
+            FileUtils.writeLine(KPROFILES_MODES_NODE, kProfileMode);
+        }
     }
 }
