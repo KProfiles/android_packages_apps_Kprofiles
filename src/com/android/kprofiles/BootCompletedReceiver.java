@@ -17,23 +17,27 @@
 
 package com.android.kprofiles;
 
+import static com.android.kprofiles.battery.KprofilesSettingsFragment.IS_SUPPORTED;
+import static com.android.kprofiles.battery.KprofilesSettingsFragment.KPROFILES_AUTO_KEY;
+import static com.android.kprofiles.battery.KprofilesSettingsFragment.KPROFILES_AUTO_NODE;
+import static com.android.kprofiles.battery.KprofilesSettingsFragment.KPROFILES_MODES_KEY;
+import static com.android.kprofiles.battery.KprofilesSettingsFragment.KPROFILES_MODES_NODE;
+import static com.android.kprofiles.battery.KprofilesSettingsFragment.ON;
+import static com.android.kprofiles.battery.KprofilesSettingsFragment.OFF;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-import com.android.kprofiles.utils.FileUtils;
 import android.content.SharedPreferences;
+
 import androidx.preference.PreferenceManager;
+
+import com.android.kprofiles.utils.FileUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
     private static final String TAG = "KProfiles";
-    private static final String KPROFILES_AUTO_KEY = "kprofiles_auto";
-    private static final String KPROFILES_AUTO_NODE = "/sys/module/kprofiles/parameters/auto_kprofiles";
-    private static final String KPROFILES_MODES_KEY = "kprofiles_modes";
-    private static final String KPROFILES_MODES_NODE = "/sys/module/kprofiles/parameters/kp_mode";
-
-    private boolean iskProfilesModesSupported = FileUtils.fileExists(KPROFILES_MODES_NODE);
 
     @Override
     public void onReceive(final Context context, Intent intent) {
@@ -42,11 +46,11 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        if (FileUtils.fileExists(KPROFILES_AUTO_NODE) == true) {
+        if (FileUtils.fileExists(KPROFILES_AUTO_NODE)) {
             boolean kProfilesAutoEnabled = sharedPrefs.getBoolean(KPROFILES_AUTO_KEY, false);
-            FileUtils.writeLine(KPROFILES_AUTO_NODE, kProfilesAutoEnabled ? "Y" : "N");
+            FileUtils.writeLine(KPROFILES_AUTO_NODE, kProfilesAutoEnabled ? ON : OFF);
         }
-        if (iskProfilesModesSupported == true) {
+        if (IS_SUPPORTED) {
             String kProfileMode = sharedPrefs.getString(KPROFILES_MODES_KEY, "0");
             FileUtils.writeLine(KPROFILES_MODES_NODE, kProfileMode);
         }

@@ -17,10 +17,13 @@
 package com.android.kprofiles.battery;
 
 import android.app.ActionBar;
+import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.UserHandle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,7 +33,6 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
 
 import com.android.kprofiles.R;
@@ -39,17 +41,20 @@ import com.android.kprofiles.utils.FileUtils;
 public class KprofilesSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private SharedPreferences mSharedPrefs;
     private SwitchPreference kProfilesAutoPreference;
     private ListPreference kProfilesModesPreference;
     private Preference kProfilesModesInfo;
-    private static final String KPROFILES_AUTO_KEY = "kprofiles_auto";
-    private static final String KPROFILES_AUTO_NODE = "/sys/module/kprofiles/parameters/auto_kprofiles";
-    private static final String KPROFILES_MODES_KEY = "kprofiles_modes";
-    private static final String KPROFILES_MODES_NODE = "/sys/module/kprofiles/parameters/kp_mode";
-    private static final String KPROFILES_MODES_INFO = "pref_kprofiles_modes_info";
+    private boolean mSelfChange = false;
 
-    private boolean iskProfilesModesSupported = FileUtils.fileExists(KPROFILES_MODES_NODE);
+    public static final String INTENT_ACTION = "com.android.kprofiles.battery.KPROFILE_CHANGED";
+    public static final String KPROFILES_MODES_NODE = "/sys/module/kprofiles/parameters/kp_mode";
+    public static final String KPROFILES_AUTO_KEY = "kprofiles_auto";
+    public static final String KPROFILES_AUTO_NODE = "/sys/module/kprofiles/parameters/auto_kprofiles";
+    public static final String KPROFILES_MODES_KEY = "kprofiles_modes";
+    public static final String KPROFILES_MODES_INFO = "pref_kprofiles_modes_info";
+    public static final String ON = "Y";
+    public static final String OFF = "N";
+    public static final boolean IS_SUPPORTED = FileUtils.fileExists(KPROFILES_MODES_NODE);
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -66,19 +71,22 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
             kProfilesAutoPreference.setEnabled(false);
         }
         kProfilesModesPreference = (ListPreference) findPreference(KPROFILES_MODES_KEY);
-        if (iskProfilesModesSupported == true) {
+        if (IS_SUPPORTED) {
             kProfilesModesPreference.setEnabled(true);
             kProfilesModesPreference.setOnPreferenceChangeListener(this);
-            updateTitle();
         } else {
             kProfilesModesPreference.setSummary(R.string.kprofiles_not_supported);
             kProfilesModesPreference.setEnabled(false);
-            updateTitle();
         }
         kProfilesModesInfo = (Preference) findPreference(KPROFILES_MODES_INFO);
-        if (iskProfilesModesSupported == false) {
-            kProfilesModesInfo.setEnabled(false);
-        }
+        kProfilesModesInfo.setEnabled(IS_SUPPORTED);
+
+        updateValues();
+
+        // Registering observers
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(INTENT_ACTION);
+        getContext().registerReceiver(mServiceStateReceiver, filter);
     }
 
     @Override
@@ -96,17 +104,40 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (KPROFILES_AUTO_KEY.equals(preference.getKey())) {
-            try {
-                FileUtils.writeLine(KPROFILES_AUTO_NODE, (Boolean) newValue ? "Y" : "N");
-            } catch(Exception e) { }
+    public void onResume() {
+        super.onResume();
+        if (kProfilesAutoPreference == null || kProfilesModesPreference == null
+                || kProfilesModesInfo == null) return;
+        updateValues();
+    }
 
-        } else if (KPROFILES_MODES_KEY.equals(preference.getKey())) {
-            try {
-                FileUtils.writeLine(KPROFILES_MODES_NODE, (String) newValue);
-                updateTitle();
-            } catch(Exception e) { }
+    @Override
+    public void onDestroy() {
+        getContext().unregisterReceiver(mServiceStateReceiver);
+        super.onDestroy();
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final String key = preference.getKey();
+        switch (key) {
+            case KPROFILES_AUTO_KEY:
+                final boolean enabled = (Boolean) newValue;
+                try {
+                    FileUtils.writeLine(KPROFILES_AUTO_NODE, enabled ? ON : OFF);
+                } catch(Exception e) { }
+                break;
+            case KPROFILES_MODES_KEY:
+                final String value = (String) newValue;
+                try {
+                    FileUtils.writeLine(KPROFILES_MODES_NODE, value);
+                    updateTitle(value);
+                    mSelfChange = true;
+                    Intent intent = new Intent(INTENT_ACTION);
+                    intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
+                    getContext().sendBroadcastAsUser(intent, UserHandle.CURRENT);
+                } catch(Exception e) { }
+                break;
         }
         return true;
     }
@@ -120,43 +151,59 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
         return false;
     }
 
-    private String modesDesc() {
+    private String modesDesc(String mode) {
         String descrpition = null;
-        if (iskProfilesModesSupported == true) {
-            String mode = getCurrentKProfilesMode();
-            switch (mode) {
-                case "0":
-                    descrpition = getString(R.string.kprofiles_modes_none_description);
-                    break;
-                case "1":
-                    descrpition = getString(R.string.kprofiles_modes_battery_description);
-                    break;
-                case "2":
-                    descrpition = getString(R.string.kprofiles_modes_balanced_description);
-                    break;
-                case "3":
-                    descrpition = getString(R.string.kprofiles_modes_performance_description);
-                    break;
-                default:
-                    descrpition = getString(R.string.kprofiles_modes_none_description);
-                    break;
-            }
-        } else {
-            descrpition = getString(R.string.kprofiles_not_supported); 
+        if (!IS_SUPPORTED) return getString(R.string.kprofiles_not_supported);
+        switch (mode) {
+            case "0":
+                descrpition = getString(R.string.kprofiles_modes_none_description);
+                break;
+            case "1":
+                descrpition = getString(R.string.kprofiles_modes_battery_description);
+                break;
+            case "2":
+                descrpition = getString(R.string.kprofiles_modes_balanced_description);
+                break;
+            case "3":
+                descrpition = getString(R.string.kprofiles_modes_performance_description);
+                break;
+            default:
+                descrpition = getString(R.string.kprofiles_modes_none_description);
+                break;
         }
         return descrpition;
     }
 
-    private void updateTitle() {
+    private void updateTitle(String value) {
         Handler.getMain().post(() -> {
             kProfilesModesInfo.setTitle(
                 String.format(getString(R.string.kprofiles_modes_description),
-                    modesDesc()));
+                    modesDesc(value)));
         });
     }
 
-    private String getCurrentKProfilesMode() {
-        mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-        return mSharedPrefs.getString(KPROFILES_MODES_KEY, "0");
+    private void updateValues() {
+        if (FileUtils.fileExists(KPROFILES_AUTO_NODE)) {
+            final String value = FileUtils.readOneLine(KPROFILES_AUTO_NODE);
+            kProfilesAutoPreference.setChecked(value != null && value.equals(ON));
+        }
+
+        if (IS_SUPPORTED) {
+            final String value = FileUtils.readOneLine(KPROFILES_MODES_NODE);
+            kProfilesModesPreference.setValue(value != null ? value : "0");
+            updateTitle(value);
+        }
     }
+
+    private final BroadcastReceiver mServiceStateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (!INTENT_ACTION.equals(intent.getAction())) return;
+            if (mSelfChange) {
+                mSelfChange = false;
+                return;
+            }
+            updateValues();
+        }
+    };
 }

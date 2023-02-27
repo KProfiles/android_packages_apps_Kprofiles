@@ -41,23 +41,14 @@ public final class FileUtils {
    */
   public static String readOneLine(String fileName) {
     String line = null;
-    BufferedReader reader = null;
 
-    try {
-      reader = new BufferedReader(new FileReader(fileName), 512);
+    try (BufferedReader reader =
+        new BufferedReader(new FileReader(fileName), 512)) {
       line = reader.readLine();
     } catch (FileNotFoundException e) {
       Log.w(TAG, "No such file " + fileName + " for reading", e);
     } catch (IOException e) {
       Log.e(TAG, "Could not read from file " + fileName, e);
-    } finally {
-      try {
-        if (reader != null) {
-          reader.close();
-        }
-      } catch (IOException e) {
-        // Ignored, not much we can do anyway
-      }
     }
 
     return line;
@@ -69,10 +60,8 @@ public final class FileUtils {
    * @return true on success, false on failure
    */
   public static boolean writeLine(String fileName, String value) {
-    BufferedWriter writer = null;
-
-    try {
-      writer = new BufferedWriter(new FileWriter(fileName));
+    try (BufferedWriter writer =
+        new BufferedWriter(new FileWriter(fileName))) {
       writer.write(value);
     } catch (FileNotFoundException e) {
       Log.w(TAG, "No such file " + fileName + " for writing", e);
@@ -80,14 +69,6 @@ public final class FileUtils {
     } catch (IOException e) {
       Log.e(TAG, "Could not write to file " + fileName, e);
       return false;
-    } finally {
-      try {
-        if (writer != null) {
-          writer.close();
-        }
-      } catch (IOException e) {
-        // Ignored, not much we can do anyway
-      }
     }
 
     return true;
