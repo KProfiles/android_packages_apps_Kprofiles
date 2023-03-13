@@ -152,6 +152,7 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
     }
 
     private String modesDesc(String mode) {
+        if (mode == null) mode = "0";
         String descrpition = null;
         if (!IS_SUPPORTED) return getString(R.string.kprofiles_not_supported);
         switch (mode) {
