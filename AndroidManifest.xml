@@ -24,15 +24,13 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <uses-sdk
-        android:minSdkVersion="24"
-        android:targetSdkVersion="24"/>
-
     <application
         android:label="@string/kprofiles_title"
         android:persistent="true">
 
-        <receiver android:name=".BootCompletedReceiver">
+        <receiver
+            android:name=".BootCompletedReceiver"
+            android:exported="true">
             <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -41,6 +39,7 @@
 
         <activity
             android:name=".battery.KprofilesSettingsActivity"
+            android:exported="true"
             android:label="@string/kprofiles_title"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
