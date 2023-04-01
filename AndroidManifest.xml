@@ -26,11 +26,11 @@
 
     <application
         android:label="@string/kprofiles_title"
-        android:persistent="true">
+        android:persistent="false">
 
         <receiver
             android:name=".BootCompletedReceiver"
-            android:exported="true">
+            android:exported="false">
             <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
