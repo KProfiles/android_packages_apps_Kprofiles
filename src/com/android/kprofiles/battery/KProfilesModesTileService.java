@@ -2,15 +2,19 @@ package com.android.kprofiles.battery;
 
 import static com.android.kprofiles.battery.KprofilesSettingsFragment.INTENT_ACTION;
 import static com.android.kprofiles.battery.KprofilesSettingsFragment.KPROFILES_MODES_NODE;
+import static com.android.kprofiles.battery.KprofilesSettingsFragment.KPROFILES_MODES_KEY;
 import static com.android.kprofiles.battery.KprofilesSettingsFragment.IS_SUPPORTED;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.UserHandle;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
+
+import androidx.preference.PreferenceManager;
 
 import com.android.kprofiles.R;
 import com.android.kprofiles.utils.FileUtils;
@@ -95,6 +99,8 @@ public class KProfilesModesTileService extends TileService {
         Intent intent = new Intent(INTENT_ACTION);
         intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
         mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT);
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+        prefs.edit().putString(KPROFILES_MODES_KEY, mode).apply();
     }
 
     private String getMode() {
