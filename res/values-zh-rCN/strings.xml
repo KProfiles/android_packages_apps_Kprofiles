@@ -13,17 +13,17 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="kprofiles_title">KProfiles</string>
-    <string name="kprofiles_summary">Managing Kernelspace profiles to achieve balancing in terms of battery backup and performance</string>
-    <string name="kprofiles_auto_title">Use Auto KProfiles</string>
-    <string name="kprofiles_auto_summary">Automatically switch to battery mode when device screen turns off and back to default profile when screen turns on</string>
-    <string name="kprofiles_modes_title">KProfiles Modes</string>
-    <string name="kprofiles_modes_none">None</string>
-    <string name="kprofiles_modes_battery">Battery</string>
-    <string name="kprofiles_modes_balanced">Balanced</string>
-    <string name="kprofiles_modes_performance">Performance</string>
-    <string name="kprofiles_not_supported">KProfiles is not currently supported by the kernel</string>
-    <string name="kprofiles_modes_none_description">Regulate and manage in-kernel activities in a profile-oriented manner to achieve balance in terms of battery backup and performance accordingly</string>
-    <string name="kprofiles_modes_battery_description">Battery Mode:\nSkip all userspace and/or in-kernel boosts, reduces gpu scaling frequency</string>
-    <string name="kprofiles_modes_balanced_description">Balanced Mode:\nTips the balance between battery and performance modes</string>
-    <string name="kprofiles_modes_performance_description">Performance Mode:\nMaximize all boosts, increases gpu scaling frequency to its max</string>
+    <string name="kprofiles_summary">管理内核空间的配置文件以在电池续航和性能方面实现平衡</string>
+    <string name="kprofiles_auto_title">使用自动 KProfiles</string>
+    <string name="kprofiles_auto_summary">当屏幕关闭时自动切换到省电模式，并在屏幕开启时回到默认配置</string>
+    <string name="kprofiles_modes_title">KProfiles 模式</string>
+    <string name="kprofiles_modes_none">无</string>
+    <string name="kprofiles_modes_battery">省电</string>
+    <string name="kprofiles_modes_balanced">均衡</string>
+    <string name="kprofiles_modes_performance">性能</string>
+    <string name="kprofiles_not_supported">当前内核不支持 KProfiles</string>
+    <string name="kprofiles_modes_none_description">以配置文件的方式规范和管理内核活动，以实现电池续航和性能方面的平衡</string>
+    <string name="kprofiles_modes_battery_description">省电模式：\n跳过所有用户空间和/或内核增强功能，降低 GPU 频率的调整比例</string>
+    <string name="kprofiles_modes_balanced_description">均衡模式：\n平衡省电和性能的选项</string>
+    <string name="kprofiles_modes_performance_description">性能模式：\n最大化所有增强，将 GPU 频率提升到最大值</string>
 </resources>

@@ -12,18 +12,18 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="kprofiles_title">KProfiles</string>
-    <string name="kprofiles_summary">Managing Kernelspace profiles to achieve balancing in terms of battery backup and performance</string>
-    <string name="kprofiles_auto_title">Use Auto KProfiles</string>
-    <string name="kprofiles_auto_summary">Automatically switch to battery mode when device screen turns off and back to default profile when screen turns on</string>
-    <string name="kprofiles_modes_title">KProfiles Modes</string>
-    <string name="kprofiles_modes_none">None</string>
-    <string name="kprofiles_modes_battery">Battery</string>
-    <string name="kprofiles_modes_balanced">Balanced</string>
-    <string name="kprofiles_modes_performance">Performance</string>
-    <string name="kprofiles_not_supported">KProfiles is not currently supported by the kernel</string>
-    <string name="kprofiles_modes_none_description">Regulate and manage in-kernel activities in a profile-oriented manner to achieve balance in terms of battery backup and performance accordingly</string>
-    <string name="kprofiles_modes_battery_description">Battery Mode:\nSkip all userspace and/or in-kernel boosts, reduces gpu scaling frequency</string>
-    <string name="kprofiles_modes_balanced_description">Balanced Mode:\nTips the balance between battery and performance modes</string>
-    <string name="kprofiles_modes_performance_description">Performance Mode:\nMaximize all boosts, increases gpu scaling frequency to its max</string>
+    <string name="kprofiles_title">KProfilleri</string>
+    <string name="kprofiles_summary">Pil yedekleme ve performans açısından dengeleme sağlamak için Kernelspace profillerini yönetme</string>
+    <string name="kprofiles_auto_title">Otomatik KProfilleri Kullanın</string>
+    <string name="kprofiles_auto_summary">Cihaz ekranı kapandığında otomatik olarak pil moduna geçer ve ekran açıldığında varsayılan profile geri döner</string>
+    <string name="kprofiles_modes_title">KProfil Modları</string>
+    <string name="kprofiles_modes_none">Hiçbiri</string>
+    <string name="kprofiles_modes_battery">Batarya</string>
+    <string name="kprofiles_modes_balanced">Dengeli</string>
+    <string name="kprofiles_modes_performance">Performans</string>
+    <string name="kprofiles_not_supported">KProfiller şu anda çekirdek tarafından desteklenmemektedir</string>
+    <string name="kprofiles_modes_none_description">Çekirdek içi faaliyetleri profil odaklı bir şekilde düzenleyip yöneterek batarya yedekleme ve performans açısından dengeyi buna göre sağlamak</string>
+    <string name="kprofiles_modes_battery_description">Pil Modu:\nTüm kullanıcı alanı ve/veya çekirdek içi güçlendirmeleri atlar, gpu ölçekleme frekansını azaltır</string>
+    <string name="kprofiles_modes_balanced_description">Dengeli Mod:\nPil ve performans modları arasındaki dengeyi sağlar</string>
+    <string name="kprofiles_modes_performance_description">Performans Modu:\nTüm güçlendirmeleri en üst düzeye çıkarır, gpu ölçekleme frekansını maksimuma çıkarır</string>
 </resources>
