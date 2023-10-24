@@ -86,7 +86,7 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
         // Registering observers
         IntentFilter filter = new IntentFilter();
         filter.addAction(INTENT_ACTION);
-        getContext().registerReceiver(mServiceStateReceiver, filter);
+        getContext().registerReceiver(mServiceStateReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
     }
 
     @Override
