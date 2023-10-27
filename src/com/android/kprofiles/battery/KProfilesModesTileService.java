@@ -59,7 +59,7 @@ public class KProfilesModesTileService extends TileService {
         // Registering observers
         IntentFilter filter = new IntentFilter();
         filter.addAction(INTENT_ACTION);
-        mContext.registerReceiver(mServiceStateReceiver, filter);
+        mContext.registerReceiver(mServiceStateReceiver, filter, Context.RECEIVER_EXPORTED);
 
         updateTileContent();
     }
