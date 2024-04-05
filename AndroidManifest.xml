@@ -26,7 +26,8 @@
 
     <application
         android:label="@string/kprofiles_title"
-        android:persistent="false">
+        android:persistent="false"
+        android:theme="@style/Theme.SubSettingsBase">
 
         <receiver
             android:name=".BootCompletedReceiver"
