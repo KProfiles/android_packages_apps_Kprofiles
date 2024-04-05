@@ -33,7 +33,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.kprofiles.R;
 import com.android.kprofiles.utils.FileUtils;
@@ -41,7 +41,7 @@ import com.android.kprofiles.utils.FileUtils;
 public class KprofilesSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private SwitchPreference kProfilesAutoPreference;
+    private SwitchPreferenceCompat kProfilesAutoPreference;
     private ListPreference kProfilesModesPreference;
     private Preference kProfilesModesInfo;
     private boolean mSelfChange = false;
@@ -62,7 +62,7 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        kProfilesAutoPreference = (SwitchPreference) findPreference(KPROFILES_AUTO_KEY);
+        kProfilesAutoPreference = (SwitchPreferenceCompat) findPreference(KPROFILES_AUTO_KEY);
         if (FileUtils.fileExists(KPROFILES_AUTO_NODE)) {
             kProfilesAutoPreference.setEnabled(true);
             kProfilesAutoPreference.setOnPreferenceChangeListener(this);

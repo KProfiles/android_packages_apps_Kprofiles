@@ -16,7 +16,7 @@
      xmlns:android="http://schemas.android.com/apk/res/android"
      android:title="@string/kprofiles_title">
 
-     <SwitchPreference
+     <SwitchPreferenceCompat
           android:key="kprofiles_auto"
           android:defaultValue="false"
           android:title="@string/kprofiles_auto_title"
